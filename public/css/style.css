@@ -1,0 +1,128 @@
+@font-face {
+    font-family: montserrat;
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+html, body {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline; 
+}
+
+html {
+    background-color: #084d6e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    gap: 20px;
+    font-family: montserrat, 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border: 3px dashed black;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+h1, h4 {
+    text-align: center;
+}
+
+h4 > a {
+    color: #084d6e;
+}
+
+h4 > a:hover {
+    color: #072d3f;
+}
+
+.form-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.form-input {
+    border: 2px solid black;
+    min-width: 300px;
+    padding-left: 15px;
+}
+
+.form-input-container {
+    display: flex;
+    gap: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.form-description{
+    max-width: 75%;
+}
+
+.button-style {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+    border: none;
+    transition: 0.2s ease;
+    background-color: #084d6e;
+    color: white;
+    font-family: montserrat, 'Courier New', Courier, monospace;
+}
+
+.button-style:hover {
+    cursor: pointer;
+    background-color: #072d3f;
+    transition: 0.2s ease;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+footer > a {
+    color: rgb(170, 228, 255);
+}
+
+footer > a:hover {
+    color: white;
+}
+
+@media(max-width: 768px) {
+    .form-input-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form-input, .button-style {
+        min-width: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

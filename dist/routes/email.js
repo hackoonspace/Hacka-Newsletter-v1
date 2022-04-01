@@ -19,7 +19,9 @@ const router = express_1.default.Router();
 router.post('/subscribe', (0, express_validator_1.body)('email').isEmail(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const errors = (0, express_validator_1.validationResult)(req);
     if (!errors.isEmpty())
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({
+            errors: errors.array()
+        });
     const email = req.body.email;
     const emailModel = new email_1.default();
     const databaseResponse = yield emailModel.insertEmailToDatabase(email);
@@ -27,10 +29,12 @@ router.post('/subscribe', (0, express_validator_1.body)('email').isEmail(), (req
         return res.send('E-mail cadastrado com sucesso');
     res.status(500).send('Problema ao cadastrar e-mail');
 }));
-router.delete('/unsubscribe', (0, express_validator_1.body)('email').isEmail(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/unsubscribe', (0, express_validator_1.body)('email').isEmail(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const errors = (0, express_validator_1.validationResult)(req);
     if (!errors.isEmpty())
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({
+            errors: errors.array()
+        });
     const email = req.body.email;
     const emailModel = new email_1.default();
     const databaseResponse = yield emailModel.deleteEmailFromDatabase(email);

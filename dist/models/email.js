@@ -8,16 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const mailchimp_1 = __importDefault(require("./mailchimp"));
+const client = new mailchimp_1.default();
 class Email {
     insertEmailToDatabase(email) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!email)
                 return false;
             try {
-                return true;
+                const response = yield client.subscribeEmail(email);
+                return response;
             }
             catch (e) {
+                console.log(e);
                 return false;
             }
         });
@@ -27,9 +34,11 @@ class Email {
             if (!email)
                 return false;
             try {
-                return true;
+                const response = yield client.unsubscribeEmail(email);
+                return response;
             }
             catch (e) {
+                console.log(e);
                 return false;
             }
         });

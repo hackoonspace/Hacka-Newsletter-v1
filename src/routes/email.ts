@@ -11,7 +11,9 @@ router.post('/subscribe',
         const errors = validationResult(req);
 
         if (!errors.isEmpty())
-          return res.status(400).json({ errors: errors.array() });
+            return res.status(400).json({ 
+                errors: errors.array() 
+            });
 
         const email = req.body.email;
         const emailModel = new Email();
@@ -26,14 +28,16 @@ router.post('/subscribe',
 );
 
 //rota para retirar um e-mail da newsletter
-router.delete('/unsubscribe', 
+router.post('/unsubscribe', 
     body('email').isEmail(),
     async (req : Request, res : Response) => {
 
         const errors = validationResult(req);
 
         if (!errors.isEmpty())
-          return res.status(400).json({ errors: errors.array() });
+            return res.status(400).json({ 
+                errors: errors.array() 
+            });
 
         const email = req.body.email;
         const emailModel = new Email();

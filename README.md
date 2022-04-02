@@ -5,8 +5,9 @@ Projeto de site newsletter para a comunidade [HackoonSpace](https://hackoonspace
 ## A fazer
 
 ### Site da newsletter
-- Ajustes nas páginas (front-end)
+- Acesso a redes sociais/site
 - Politica de privacidade
+- Hospedagem
 
 ### Envio dos e-mails
 - Design base dos e-mails da newsletter

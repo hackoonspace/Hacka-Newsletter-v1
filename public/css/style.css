@@ -22,7 +22,7 @@ html {
     width: 100vw;
     gap: 20px;
     font-family: montserrat, 'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 main {
@@ -30,16 +30,27 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
     background-color: white;
     border: 3px dashed black;
-    padding: 20px;
+    padding: 35px 15px 35px 15px;
     border-radius: 5px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 750px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+h1 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
 h1, h4 {
+    margin: 0;
     text-align: center;
 }
 
@@ -57,8 +68,6 @@ h4 > a:hover {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
 }
 
 .form-input {
@@ -75,7 +84,7 @@ h4 > a:hover {
 }
 
 .form-description{
-    max-width: 75%;
+    max-width: 80%;
 }
 
 .button-style {
@@ -107,14 +116,21 @@ footer {
 }
 
 footer > a {
-    color: rgb(170, 228, 255);
+    color: rgb(144, 217, 250);
 }
 
 footer > a:hover {
     color: white;
 }
 
+@media(max-width:900px) {
+    main {
+        width: auto;
+    }
+}
+
 @media(max-width: 768px) {
+
     .form-input-container {
         flex-direction: column;
         width: 100%;
@@ -124,5 +140,11 @@ footer > a:hover {
         min-width: 0;
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+}
+
+@media(max-width: 300px){
+    main{
+        margin: 0;
     }
 }

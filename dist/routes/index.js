@@ -11,5 +11,8 @@ router.get('/', (req, res) => {
 router.get('/descadastrar', (req, res) => {
     res.render('descadastrar.ejs');
 });
+router.get('/privacidade', (req, res) => {
+    res.render('privacidade.ejs');
+});
 exports.default = router;
 //# sourceMappingURL=index.js.map

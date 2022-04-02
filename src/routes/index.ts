@@ -9,4 +9,8 @@ router.get('/descadastrar', (req : Request, res : Response) => {
     res.render('descadastrar.ejs');
 });
 
+router.get('/privacidade', (req : Request, res : Response) => {
+    res.render('privacidade.ejs');
+});
+
 export default router;

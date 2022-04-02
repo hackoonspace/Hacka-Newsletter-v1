@@ -1,4 +1,4 @@
-# Hacka Newsletter
+# Hacka Newsletter (EM DESENVOLVIMENTO)
 
 Projeto de site newsletter para a comunidade [HackoonSpace](https://hackoonspace.com), utilizando TypeScript e integrações com a API do Mailchimp. 
 

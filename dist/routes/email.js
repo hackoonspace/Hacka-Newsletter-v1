@@ -26,8 +26,8 @@ router.post('/subscribe', (0, express_validator_1.body)('email').isEmail(), (req
     const emailModel = new email_1.default();
     const databaseResponse = yield emailModel.insertEmailToDatabase(email);
     if (databaseResponse)
-        return res.send('E-mail cadastrado com sucesso');
-    res.status(500).send('Problema ao cadastrar e-mail');
+        return res.redirect('/?success=true');
+    res.redirect('/?success=false');
 }));
 router.post('/unsubscribe', (0, express_validator_1.body)('email').isEmail(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const errors = (0, express_validator_1.validationResult)(req);
@@ -39,8 +39,8 @@ router.post('/unsubscribe', (0, express_validator_1.body)('email').isEmail(), (r
     const emailModel = new email_1.default();
     const databaseResponse = yield emailModel.deleteEmailFromDatabase(email);
     if (databaseResponse)
-        return res.send('E-mail descadastrado com sucesso');
-    res.status(500).send('Problema ao descadastrar o e-mail');
+        return res.redirect('/descadastrar?success=true');
+    res.redirect('/descadastrar?success=false');
 }));
 exports.default = router;
 //# sourceMappingURL=email.js.map

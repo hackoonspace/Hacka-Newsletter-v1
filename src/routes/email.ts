@@ -21,9 +21,9 @@ router.post('/subscribe',
         const databaseResponse = await emailModel.insertEmailToDatabase(email);
 
         if(databaseResponse)
-            return res.send('E-mail cadastrado com sucesso');
+            return res.redirect('/?success=true');
   
-        res.status(500).send('Problema ao cadastrar e-mail');
+        res.redirect('/?success=false');
     }
 );
 
@@ -45,9 +45,9 @@ router.post('/unsubscribe',
         const databaseResponse = await emailModel.deleteEmailFromDatabase(email);
 
         if(databaseResponse)
-            return res.send('E-mail descadastrado com sucesso');
+            return res.redirect('/descadastrar?success=true');
 
-        res.status(500).send('Problema ao descadastrar o e-mail');
+        res.redirect('/descadastrar?success=false');
     }
 );
 

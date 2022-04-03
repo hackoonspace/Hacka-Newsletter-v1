@@ -23,7 +23,7 @@ body {
     justify-content: center;
     flex-direction: column;
     background-color: #084d6e;
-    font-family: montserrat, 'Courier New', Courier, monospace;
+    font-family: montserrat, Arial, sans-serif, monospace;
     font-size: 1.2em;
     min-height: 100%;
 }

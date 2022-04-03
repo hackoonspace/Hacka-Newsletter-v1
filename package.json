@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "tsc",
     "build": "tsc",
     "watch": "tsc -w",
     "dev": "nodemon ./dist/index.js",

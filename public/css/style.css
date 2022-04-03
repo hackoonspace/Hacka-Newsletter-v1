@@ -9,20 +9,29 @@ html, body {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline; 
+	vertical-align: baseline;
 }
 
 html {
-    background-color: #084d6e;
+    height: 100%;
+}
+
+body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    gap: 20px;
+    background-color: #084d6e;
     font-family: montserrat, 'Courier New', Courier, monospace;
     font-size: 1.2em;
+    min-height: 100%;
+}
+
+header {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
 }
 
 main {
@@ -35,10 +44,17 @@ main {
     border: 3px dashed black;
     padding: 35px 15px 35px 15px;
     border-radius: 5px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     margin-left: 15px;
     margin-right: 15px;
     width: 750px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+p {
+    margin: 0;
+    font-size: 0.8em;
 }
 
 h1 {
@@ -54,11 +70,15 @@ h1, h4 {
     text-align: center;
 }
 
-h4 > a {
+p > a {
+    font-weight: bold;
+}
+
+p > a, h4 > a {
     color: #084d6e;
 }
 
-h4 > a:hover {
+p > a, h4 > a:hover {
     color: #072d3f;
 }
 
@@ -105,9 +125,7 @@ h4 > a:hover {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    margin-top: 20px;
     margin-bottom: 40px;
     width: 100%;
     text-align: center;
@@ -115,11 +133,11 @@ footer {
     color: white;
 }
 
-footer > a {
+header > a, footer > a {
     color: rgb(144, 217, 250);
 }
 
-footer > a:hover {
+header > a:hover, footer > a:hover {
     color: white;
 }
 
@@ -130,6 +148,15 @@ footer > a:hover {
 }
 
 @media(max-width: 768px) {
+
+    header {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        margin-top: 40px;
+    }
 
     .form-input-container {
         flex-direction: column;
@@ -145,6 +172,7 @@ footer > a:hover {
 
 @media(max-width: 300px){
     main{
-        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }

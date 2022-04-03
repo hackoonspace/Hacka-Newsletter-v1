@@ -5,14 +5,12 @@ Projeto de site newsletter para a comunidade [HackoonSpace](https://hackoonspace
 ## A fazer
 
 ### Site da newsletter
-- Acesso a redes sociais/site
-- Politica de privacidade
 - Hospedagem
 
 ### Envio dos e-mails
 - Design base dos e-mails da newsletter
 - Mandar e-mail de ao se cadastrar/descadastrar na newsletter
-- Decisões de projeto para evitar flood
+- Decisões de projeto para evitar flood (recaptcha)
 
 ## Autores:
 

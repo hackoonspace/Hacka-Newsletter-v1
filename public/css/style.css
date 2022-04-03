@@ -70,16 +70,31 @@ h1, h4 {
     text-align: center;
 }
 
+.message {
+    text-align: center;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.success{
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
 p > a {
     font-weight: bold;
 }
 
-p > a, h4 > a {
-    color: #084d6e;
+.error-message > a, p > a, h4 > a {
+    color: #0f638a;
 }
 
-p > a, h4 > a:hover {
-    color: #072d3f;
+.error-message > a:hover, p > a:hover, h4 > a:hover {
+    color: #020f15;
 }
 
 .form-style {

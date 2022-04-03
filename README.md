@@ -5,7 +5,6 @@ Projeto de site newsletter para a comunidade [HackoonSpace](https://hackoonspace
 ## A fazer
 
 ### Site da newsletter
-- Mensagem de resposta de erro/sucesso no cadastro/descadastro
 - Hospedagem
 - Decisões de projeto para evitar flood e ataques (ex: Recaptcha)
 

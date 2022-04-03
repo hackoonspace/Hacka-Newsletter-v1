@@ -42,7 +42,16 @@ export default class Mailchimp {
         if(unsubscribeResponse.error_count > 0)
             return false;
 
-        const subscriberHash = unsubscribeResponse.updated_members[0].id;
+        let subscriberHash = 0;
+
+        if(unsubscribeResponse.total_updated)
+            subscriberHash = unsubscribeResponse.updated_members[0].id;
+
+        if(unsubscribeResponse.total_created)
+            subscriberHash = unsubscribeResponse.new_members[0].id;
+
+        if(!subscriberHash)
+            return false;
 
         await client.lists.deleteListMember(
             this.listId,

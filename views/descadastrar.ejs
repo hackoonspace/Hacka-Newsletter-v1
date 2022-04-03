@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Newsletter do HackoonSpace">
     <title>Newsletter do Hackoon</title>
     <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <header>
-        <a href="https://hackoonspace.com">Clique aqui</a> para ir ao nosso site
+        Visite <a href="https://hackoonspace.com">nosso site</a> para conhecer mais sobre a gente
     </header>
     <main>
         <h1>Descadastro da Newsletter</h1>
@@ -21,6 +22,8 @@
                 <button class="button-style">DESCADASTRAR</button>
             </div>
         </form>
+        <% if (success === "true") {%> <span class="message success">Sucesso ao descadastrar e-mail!</span> <% } %>
+        <% if (success === "false") {%> <span class="message error">Erro ao descadastrar e-mail. Verifique e tente novamente. Se o erro persistir, entre em contato conosco pelo nosso <a href="mailto:hackoonspace@gmail.com">e-mail</a></span> <% } %>
         <h4>Quer se inscrever? <a href="/">Clique aqui!</a></h4>
         <h4>Veja nossa <a href="/privacidade">política de privacidade</a></h4>
     </main>

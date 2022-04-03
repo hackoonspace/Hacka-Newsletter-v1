@@ -32,7 +32,7 @@ As variáveis de ambiente necessárias para este projeto são:
 
 ## Imagens
 
-![Página principal do site](https://github.com/hackoonspace/Hacka-Newsletter-v1/blob/main/docs/img1.png))
+![Página principal do site](https://github.com/hackoonspace/Hacka-Newsletter-v1/blob/main/docs/img1.png)
 
 ## Autores:
 - Marcus Vinícius Natrielli Garcia ([@InfiniteMarcus](https://github.com/InfiniteMarcus))

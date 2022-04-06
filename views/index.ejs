@@ -15,12 +15,13 @@
     </header>
     <main>
         <h1>Newsletter do HackoonSpace</h1>
-        <form class="form-style" method="POST" action="/email/subscribe">
+        <form class="form-style" method="POST" action="/email/subscribe" onClick="onClick()">
             <span class="form-description">Receba anúncios e novidades sobre a gente na sua caixa de entrada:</span>
             <div class="form-input-container">
-                <input class="form-input" type="email" name="email" placeholder="Seu e-mail" required>
+                <input class="form-input" type="email" name="email" id="email" placeholder="Seu e-mail" required>
                 <button class="button-style">CADASTRAR</button>
             </div>
+            <input type="hidden" name="token" id="token">
         </form>
         <% if (success === "true") {%> <span class="message success">Sucesso ao cadastrar e-mail!</span> <% } %>
         <% if (success === "false") {%> <span class="message error">Erro ao cadastrar e-mail. Verifique e tente novamente</span> <% } %>
@@ -30,6 +31,11 @@
     <footer>
         Feito por <a href="https://github.com/InfiniteMarcus" target="_blank" rel="noopener">@infinitemarcus</a>
     </footer>
+    <% var recaptcha_key = process.env.RECAPTCHA_PUBLIC_KEY; %>
+    <script type="text/javascript">
+       var recaptcha_key = '<%= recaptcha_key  %>';
+    </script>
+    <script src='<%= `https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_PUBLIC_KEY}` %>' ></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

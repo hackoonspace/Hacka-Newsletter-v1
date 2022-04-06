@@ -14,10 +14,12 @@
   "license": "ISC",
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.74",
+    "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "express-validator": "^6.14.0"
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.0",

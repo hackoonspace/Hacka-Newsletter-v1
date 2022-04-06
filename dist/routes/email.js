@@ -15,13 +15,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const express_validator_1 = require("express-validator");
 const email_1 = __importDefault(require("../models/email"));
+const recaptcha_1 = require("../utils/recaptcha");
 const router = express_1.default.Router();
-router.post('/subscribe', (0, express_validator_1.body)('email').isEmail(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/subscribe', (0, express_validator_1.body)('email').isEmail(), (0, express_validator_1.body)('token').isString(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const errors = (0, express_validator_1.validationResult)(req);
     if (!errors.isEmpty())
         return res.status(400).json({
             errors: errors.array()
         });
+    const token = req.body.token;
+    const recaptchaValidateResponse = yield (0, recaptcha_1.validateToken)(token);
+    if (!recaptchaValidateResponse)
+        return res.redirect('/?success=false');
     const email = req.body.email;
     const emailModel = new email_1.default();
     const databaseResponse = yield emailModel.insertEmailToDatabase(email);
@@ -29,12 +34,16 @@ router.post('/subscribe', (0, express_validator_1.body)('email').isEmail(), (req
         return res.redirect('/?success=true');
     res.redirect('/?success=false');
 }));
-router.post('/unsubscribe', (0, express_validator_1.body)('email').isEmail(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/unsubscribe', (0, express_validator_1.body)('email').isEmail(), (0, express_validator_1.body)('token').isString(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const errors = (0, express_validator_1.validationResult)(req);
     if (!errors.isEmpty())
         return res.status(400).json({
             errors: errors.array()
         });
+    const token = req.body.token;
+    const recaptchaValidateResponse = yield (0, recaptcha_1.validateToken)(token);
+    if (!recaptchaValidateResponse)
+        return res.redirect('/descadastrar?success=false');
     const email = req.body.email;
     const emailModel = new email_1.default();
     const databaseResponse = yield emailModel.deleteEmailFromDatabase(email);

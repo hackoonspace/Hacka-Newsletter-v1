@@ -21,7 +21,7 @@ app.use(
     helmet.contentSecurityPolicy({
       useDefaults: true,
       directives: {
-        "script-src": ["'self'", process.env.CONTENT_SECURITY_POLICE_GOOGLE_HASH || "", "https://www.google.com/recaptcha/", "https://www.gstatic.com/"],
+        "script-src": ["'self'", `'${process.env.CONTENT_SECURITY_POLICE_GOOGLE_HASH}'` || "''", "https://www.google.com/recaptcha/", "https://www.gstatic.com/"],
         "frame-src": ["'self'", "https://www.google.com/recaptcha/", "https://www.gstatic.com/"],
         "style-src": null,
       },

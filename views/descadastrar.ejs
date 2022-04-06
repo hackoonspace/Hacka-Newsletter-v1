@@ -15,7 +15,7 @@
     </header>
     <main>
         <h1>Descadastro da Newsletter</h1>
-        <form class="form-style" method="POST" action="/email/unsubscribe" onClick="onClick()">
+        <form class="form-style" method="POST" action="/email/unsubscribe">
             <span class="form-description">Preencha com o e-mail cadastrado na newsletter para parar de receber nossos e-mails:</span>
             <div class="form-input-container">
                 <input class="form-input" type="email" name="email" placeholder="Seu e-mail" required>
@@ -25,6 +25,7 @@
         </form>
         <% if (success === "true") {%> <span class="message success">Sucesso ao descadastrar e-mail!</span> <% } %>
         <% if (success === "false") {%> <span class="message error">Erro ao descadastrar e-mail. Verifique e tente novamente. Se o erro persistir, entre em contato conosco pelo nosso <a href="mailto:hackoonspace@gmail.com">e-mail</a></span> <% } %>
+        <% if (success === "recaptcha_fail") {%> <span class="message error">Erro no desafio reCAPTCHA</span> <% } %>
         <h4>Quer se inscrever? <a href="/">Clique aqui!</a></h4>
         <h4>Veja nossa <a href="/privacidade">política de privacidade</a></h4>
     </main>

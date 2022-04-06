@@ -15,7 +15,7 @@
     </header>
     <main>
         <h1>Newsletter do HackoonSpace</h1>
-        <form class="form-style" method="POST" action="/email/subscribe" onClick="onClick()">
+        <form class="form-style" method="POST" action="/email/subscribe">
             <span class="form-description">Receba anúncios e novidades sobre a gente na sua caixa de entrada:</span>
             <div class="form-input-container">
                 <input class="form-input" type="email" name="email" id="email" placeholder="Seu e-mail" required>
@@ -24,7 +24,8 @@
             <input type="hidden" name="token" id="token">
         </form>
         <% if (success === "true") {%> <span class="message success">Sucesso ao cadastrar e-mail!</span> <% } %>
-        <% if (success === "false") {%> <span class="message error">Erro ao cadastrar e-mail. Verifique e tente novamente</span> <% } %>
+        <% if (success === "false") {%> <span class="message error">Erro ao cadastrar e-mail. Verifique e tente novamente. Se o erro persistir, entre em contato conosco pelo nosso <a href="mailto:hackoonspace@gmail.com">e-mail</a></span> <% } %>
+        <% if (success === "recaptcha_fail") {%> <span class="message error">Erro no desafio reCAPTCHA</span> <% } %>
         <h4>Quer se desinscrever? <a href="/descadastrar">Clique aqui!</a></h4>
         <h4>Veja nossa <a href="/privacidade">política de privacidade</a></h4>
     </main>

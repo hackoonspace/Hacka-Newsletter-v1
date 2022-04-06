@@ -22,7 +22,7 @@ router.post('/subscribe',
         const recaptchaValidateResponse = await validateToken(token);
 
         if(!recaptchaValidateResponse) 
-            return res.redirect('/?success=false');
+            return res.redirect('/?recaptcha_fail=true');
 
         const email = req.body.email;
         const emailModel = new Email();
@@ -54,7 +54,7 @@ router.post('/unsubscribe',
         const recaptchaValidateResponse = await validateToken(token);
 
         if(!recaptchaValidateResponse) 
-            return res.redirect('/descadastrar?success=false');
+            return res.redirect('/descadastrar?recaptcha_fail=true');
 
         const email = req.body.email;
         const emailModel = new Email();
